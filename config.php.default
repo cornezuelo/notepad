@@ -1,0 +1,7 @@
+<?php
+$config = array("pwd" => "abc1234.",
+"DBhost" => "localhost",
+"DBuser" => "root",
+"DBpwd"	 => "",
+"DBdb"	 => "notepad");
+?>
