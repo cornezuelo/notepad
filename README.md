@@ -11,6 +11,7 @@ Copy `config.php.default` to `config.php` and set up your configuration in the `
 
 Also, you'll need to create the structure of the table `notas` for storing the notes:
 
+```
 CREATE TABLE IF NOT EXISTS `notas` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `titulo` varchar(40) NOT NULL,
@@ -18,3 +19,4 @@ CREATE TABLE IF NOT EXISTS `notas` (
   `pos` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=36 ;
+```
