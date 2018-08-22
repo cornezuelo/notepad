@@ -3,5 +3,6 @@ $config = array("pwd" => "abc1234.",
 "DBhost" => "localhost",
 "DBuser" => "root",
 "DBpwd"	 => "",
-"DBdb"	 => "notepad");
+"DBdb"	 => "notepad",
+"hash" => "z`7^9G_Y7HGs,L48mEgHZe5D#?Fba]M=");
 ?>
