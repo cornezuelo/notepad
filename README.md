@@ -8,6 +8,7 @@ Copy `config.php.default` to `config.php` and set up your configuration in the `
 - DBuser = User for the MySQL database
 - DBpwd = Pasword for the MySQL database
 - DBdb = Database for the MySQL table
+- hash = Encryption hash. Recommended to change at the beggining. Don't change it afterwards, it would need a migration of your data.
 
 Also, you'll need to create the structure of the table `notas` for storing the notes:
 
