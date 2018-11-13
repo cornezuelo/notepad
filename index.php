@@ -31,7 +31,7 @@ if (!isset($_SESSION['pwd'])) $_SESSION['pwd'] = '';
 if (
 	!isset($_SESSION) || 
 	$_SESSION['pwd'] != $config['pwd'] || 
-	(isset($_REQUEST['g-recaptcha-response']) && !empty($_REQUEST['g-recaptcha-response']) && checkRecaptcha($_REQUEST['g-recaptcha-response']) == false)
+	(isset($config['recaptchaPublicKey'] && !empty($config['recaptchaPublicKey']) && isset($_REQUEST['g-recaptcha-response']) && checkRecaptcha($_REQUEST['g-recaptcha-response']) == false)
 ) {	
 	if ($_SESSION['pwd'] != '') {
 		$flag_pwd = 1;		
