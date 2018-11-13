@@ -9,7 +9,7 @@
 	  <div class="container">
 		<div class="col-xs-8">
 			<?php if (isset($config['recaptchaPublicKey']) && !empty($config['recaptchaPublicKey'])) { ?>
-					<div class="g-recaptcha" data-sitekey="<?php echo $config['recaptchaPublicKey']; ?>"></div>
+					<div align="center"><div class="g-recaptcha" data-sitekey="<?php echo $config['recaptchaPublicKey']; ?>"></div></div>
 			<?php } ?>				
 			<?php if (isset($flag_pwd)) { ?>
 			<div align="center"><p style="color:red"><b>The password is wrong</b></p></div>
