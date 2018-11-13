@@ -6,12 +6,33 @@ $class = '';
 $h1 = 'Notas';
 include_once("classes/loader.php");
 include_once("config.php");
+//Recaptcha
+function checkRecaptcha($recaptcha) {	
+	global $config;
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL, 'https://www.google.com/recaptcha/api/siteverify');		
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);		
+	curl_setopt($ch, CURLOPT_POST, 1);
+	curl_setopt($ch, CURLOPT_POSTFIELDS, "secret=".$config["recaptchaPrivateKey"]."&response=".$recaptcha);
+	$data = json_decode(curl_exec($ch));						
+	curl_close($ch);						
+	if ($data && isset($data->success)) { 
+		return $data->success;
+	} else {
+		return false;
+	}
+}
+
 //Control de Acceso
 if (isset($rq['password']) && isset($rq["accion"]) && $rq["accion"] == "login") {
 	$_SESSION['pwd'] = $rq['password'];
 }
 if (!isset($_SESSION['pwd'])) $_SESSION['pwd'] = '';
-if (!isset($_SESSION) || $_SESSION['pwd'] != $config['pwd']) {	
+if (
+	!isset($_SESSION) || 
+	$_SESSION['pwd'] != $config['pwd'] || 
+	(isset($_REQUEST['g-recaptcha-response']) && !empty($_REQUEST['g-recaptcha-response']) && checkRecaptcha($_REQUEST['g-recaptcha-response']) == false)
+) {	
 	if ($_SESSION['pwd'] != '') {
 		$flag_pwd = 1;		
 	}
