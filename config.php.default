@@ -4,5 +4,8 @@ $config = array("pwd" => "abc1234.",
 "DBuser" => "root",
 "DBpwd"	 => "",
 "DBdb"	 => "notepad",
-"hash" => "z`7^9G_Y7HGs,L48mEgHZe5D#?Fba]M=");
+"hash" => "z`7^9G_Y7HGs,L48mEgHZe5D#?Fba]M=",
+"recaptchaPublicKey" => false,
+"recaptchaPrivateKey" => false
+);
 ?>
