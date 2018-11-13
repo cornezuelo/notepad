@@ -1,6 +1,9 @@
 ﻿<!DOCTYPE html>
 <html>
   <head>
+<?php if (isset($config['recaptchaPublicKey']) && !empty($config['recaptchaPublicKey'])) { ?>
+<script src='https://www.google.com/recaptcha/api.js?render=<?php echo $config['recaptchaPublicKey'] ?>'></script>	 
+<?php } ?>
     <script src="resources/js/jquery-3.2.1.min.js"></script>
     <script src="resources/js/bootstrap.bundle.min.js"></script>
 	<script src="resources/js/tinymce/tinymce.min.js"></script>	
